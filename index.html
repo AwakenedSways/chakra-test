@@ -3,26 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>✦ CHAKRA HEALING GUIDE · COMPLETE ASSESSMENT ✦</title>
+    <title>✦ COMPLETE CHAKRA ASSESSMENT · 7 CHAKRA SCORING ✦</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
         }
         
         body {
-            background: #03020a;
+            background: radial-gradient(ellipse at 30% 20%, #0a0c1a 0%, #0e1022 40%, #080a18 100%);
             min-height: 100vh;
             padding: 20px 15px;
             color: #e0e5f0;
             line-height: 1.6;
             position: relative;
-            overflow-x: hidden;
         }
         
-        /* DYNAMIC ORB BACKGROUND */
         .orb-background {
             position: fixed;
             top: 0;
@@ -31,7 +29,6 @@
             bottom: 0;
             z-index: 0;
             pointer-events: none;
-            overflow: hidden;
         }
         
         .glowing-orb {
@@ -39,30 +36,11 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 80vmin;
-            height: 80vmin;
+            width: 70vmin;
+            height: 70vmin;
             border-radius: 50%;
-            filter: blur(60px);
-            opacity: 0.6;
-            transition: all 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-            animation: gentlePulse 4s infinite alternate;
-        }
-        
-        @keyframes gentlePulse {
-            0% { transform: translate(-50%, -50%) scale(0.95); opacity: 0.5; }
-            100% { transform: translate(-50%, -50%) scale(1.05); opacity: 0.8; }
-        }
-        
-        .inner-glow {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 40vmin;
-            height: 40vmin;
-            border-radius: 50%;
-            filter: blur(40px);
-            opacity: 0.8;
+            filter: blur(70px);
+            opacity: 0.5;
             transition: all 0.6s ease;
         }
         
@@ -80,7 +58,6 @@
             position: absolute;
             background: white;
             border-radius: 50%;
-            opacity: 0;
             animation: twinkle var(--duration) infinite alternate;
         }
         
@@ -89,244 +66,140 @@
             100% { opacity: var(--opacity); transform: scale(1.2); }
         }
         
-        .flower-of-life {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 2;
-            pointer-events: none;
-            opacity: 0.1;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cpath fill='none' stroke='%23ffffff' stroke-width='0.6' d='M100,20 L170,65 L170,135 L100,180 L30,135 L30,65 L100,20 Z M100,48 L148,80 L148,120 L100,152 L52,120 L52,80 L100,48 Z M100,74 L128,92 L128,108 L100,126 L72,108 L72,92 L100,74 Z'/%3E%3C/svg%3E");
-            background-repeat: repeat;
-            background-size: 120px 120px;
-        }
-        
-        .sacred-circles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 1;
-            pointer-events: none;
-        }
-        
-        .circle-ring {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-        
-        .circle-ring:nth-child(1) { width: 100vmin; height: 100vmin; }
-        .circle-ring:nth-child(2) { width: 120vmin; height: 120vmin; border-color: rgba(255,255,255,0.04); }
-        .circle-ring:nth-child(3) { width: 140vmin; height: 140vmin; border-color: rgba(255,255,255,0.03); }
-        .circle-ring:nth-child(4) { width: 160vmin; height: 160vmin; border-color: rgba(255,255,255,0.02); }
-        .circle-ring:nth-child(5) { width: 180vmin; height: 180vmin; border-color: rgba(255,255,255,0.01); }
-        
         .cosmic-container {
             max-width: 1300px;
-            width: 100%;
             margin: 0 auto;
             position: relative;
             z-index: 10;
         }
         
         .stellar-header {
-            margin-bottom: 30px;
             text-align: center;
-            border-bottom: 1px solid rgba(140, 110, 210, 0.4);
-            padding-bottom: 20px;
-            backdrop-filter: blur(8px);
-            background: rgba(5, 3, 12, 0.3);
-            border-radius: 40px;
+            margin-bottom: 35px;
+            background: rgba(5, 3, 12, 0.4);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
             padding: 25px 20px;
         }
         
-        .logo-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-        
-        .your-logo {
-            max-width: 260px;
-            max-height: 90px;
-            filter: drop-shadow(0 0 20px rgba(140, 100, 220, 0.5));
-            border-radius: 16px;
-        }
-        
-        .glyph-container {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 10px;
-            flex-wrap: wrap;
-        }
-        
-        .glyph {
-            font-size: 38px;
-            filter: drop-shadow(0 0 20px rgba(140, 100, 220, 0.6));
-            animation: glyphPulse 3s infinite alternate;
-        }
-        
-        @keyframes glyphPulse {
-            0% { opacity: 0.7; transform: scale(1); }
-            100% { opacity: 1; transform: scale(1.1); }
-        }
+        .logo-container { display: flex; justify-content: center; margin-bottom: 15px; }
+        .your-logo { max-width: 220px; max-height: 80px; filter: drop-shadow(0 0 15px rgba(140, 100, 220, 0.5)); }
+        .glyph-container { display: flex; justify-content: center; gap: 30px; margin-bottom: 10px; }
+        .glyph { font-size: 36px; filter: drop-shadow(0 0 15px rgba(140, 100, 220, 0.6)); animation: pulse 3s infinite alternate; }
+        @keyframes pulse { 0% { opacity: 0.7; transform: scale(1); } 100% { opacity: 1; transform: scale(1.1); } }
         
         h1 {
-            font-size: clamp(2rem, 7vw, 3.2rem);
+            font-size: clamp(1.8rem, 6vw, 2.8rem);
             font-weight: 300;
-            letter-spacing: clamp(3px, 2vw, 8px);
-            text-transform: uppercase;
-            background: linear-gradient(135deg, #ffffff, #c0b0ff, #d0b0ff);
+            letter-spacing: clamp(4px, 2vw, 8px);
+            background: linear-gradient(135deg, #ffffff, #c0b0ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 6px;
         }
+        .subtitle { color: #c0b0e0; letter-spacing: 2px; }
         
-        .subtitle {
-            font-size: clamp(0.8rem, 3vw, 1rem);
-            font-weight: 300;
-            letter-spacing: clamp(2px, 1vw, 4px);
-            color: #c0b0e0;
-        }
-        
-        /* Chakra Selector */
         .chakra-selector {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 12px;
-            margin-bottom: 35px;
+            gap: 10px;
+            margin-bottom: 30px;
             background: rgba(10, 8, 25, 0.5);
-            backdrop-filter: blur(15px);
+            backdrop-filter: blur(10px);
             border-radius: 60px;
-            padding: 15px 20px;
-            border: 1px solid rgba(140, 110, 210, 0.3);
+            padding: 12px 15px;
         }
         
         .chakra-pill {
             background: rgba(30, 25, 55, 0.7);
             border: 1px solid rgba(100, 80, 160, 0.5);
             border-radius: 40px;
-            padding: 10px 20px;
+            padding: 8px 18px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            text-align: center;
-            font-size: 0.9rem;
-            font-weight: 500;
-            backdrop-filter: blur(4px);
+            transition: 0.2s;
+            font-size: 0.85rem;
+        }
+        .chakra-pill:hover { transform: translateY(-2px); background: rgba(100, 80, 160, 0.6); }
+        .chakra-pill.active { background: rgba(138, 106, 208, 0.8); border-color: #c0a0ff; box-shadow: 0 0 15px currentColor; }
+        
+        .chakra-card {
+            background: rgba(10, 8, 25, 0.75);
+            backdrop-filter: blur(15px);
+            border-radius: 32px;
+            border: 1px solid rgba(140, 110, 210, 0.4);
+            overflow: hidden;
+            margin-bottom: 30px;
         }
         
-        .chakra-pill:hover {
-            transform: translateY(-3px);
-            filter: brightness(1.2);
-        }
+        .chakra-header { padding: 25px 30px 15px; border-bottom: 1px solid rgba(140, 110, 210, 0.3); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 15px; }
+        .chakra-name { font-size: 1.8rem; font-weight: 500; background: linear-gradient(135deg, #ffffff, #c0b0ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .chakra-sanskrit { font-size: 0.9rem; color: #b0a0e0; }
+        .color-badge { display: flex; align-items: center; gap: 10px; background: rgba(0,0,0,0.3); padding: 6px 16px; border-radius: 40px; }
+        .color-dot { width: 18px; height: 18px; border-radius: 50%; }
         
-        .chakra-pill.active {
-            background: rgba(138, 106, 208, 0.8);
-            border-color: #c0a0ff;
-            box-shadow: 0 0 20px currentColor;
-        }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; padding: 20px 30px; background: rgba(0,0,0,0.25); }
+        .stat { text-align: center; }
+        .stat-label { font-size: 0.7rem; text-transform: uppercase; color: #b0a0e0; }
+        .stat-value { font-size: 1rem; font-weight: 600; margin-top: 4px; }
         
-        /* Quiz Section - Enhanced */
+        .content { padding: 25px 30px; }
+        .section { margin: 25px 0 20px; }
+        .section-title { font-size: 1.1rem; font-weight: 600; color: #e0c0ff; margin-bottom: 12px; border-left: 3px solid currentColor; padding-left: 12px; }
+        .symptoms-grid, .crystals-list, .oils-list, .yoga-list { display: flex; flex-wrap: wrap; gap: 10px; margin: 12px 0; }
+        .symptom-tag, .crystal-tag, .oil-tag, .yoga-pose { background: rgba(138, 106, 208, 0.2); border: 1px solid rgba(138, 106, 208, 0.4); border-radius: 30px; padding: 6px 14px; font-size: 0.85rem; }
+        .affirmation-box { background: linear-gradient(145deg, rgba(138, 106, 208, 0.15), rgba(100, 80, 160, 0.08)); border-left: 4px solid; padding: 18px 22px; border-radius: 20px; margin: 20px 0; font-style: italic; }
+        .ritual-box, .meditation-box { background: rgba(20, 18, 45, 0.5); border-radius: 20px; padding: 18px; margin: 15px 0; border: 1px solid rgba(138, 106, 208, 0.25); }
+        .mantra { font-size: 2rem; text-align: center; letter-spacing: 6px; color: #ffbc6c; margin: 20px 0; text-shadow: 0 0 15px rgba(255, 188, 108, 0.3); }
+        
+        /* QUIZ SECTION */
         .quiz-section {
             background: rgba(10, 8, 25, 0.7);
             backdrop-filter: blur(15px);
             border-radius: 32px;
-            padding: 30px;
-            margin-top: 30px;
-            margin-bottom: 30px;
-            border: 1px solid rgba(138, 106, 208, 0.4);
-        }
-        
-        .quiz-header {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-        
-        .quiz-header h3 {
-            font-size: 1.8rem;
-            font-weight: 300;
-            margin-bottom: 8px;
-            background: linear-gradient(135deg, #ffffff, #c0b0ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .progress-container {
-            background: rgba(30, 25, 55, 0.5);
-            border-radius: 30px;
-            height: 8px;
-            margin: 20px 0;
-            overflow: hidden;
-        }
-        
-        .progress-bar {
-            width: 0%;
-            height: 100%;
-            background: linear-gradient(90deg, #8a6ad0, #c0a0ff);
-            border-radius: 30px;
-            transition: width 0.3s ease;
-        }
-        
-        .quiz-question {
-            background: rgba(20, 18, 40, 0.6);
-            border-radius: 24px;
             padding: 25px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(138, 106, 208, 0.3);
+            margin-top: 25px;
         }
         
-        .question-text {
-            font-size: 1.2rem;
-            font-weight: 500;
-            margin-bottom: 20px;
-            color: #e0d0ff;
-        }
+        .progress-bar { height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { width: 0%; height: 100%; background: linear-gradient(90deg, #8a6ad0, #c0a0ff); transition: width 0.3s; }
         
-        .quiz-options {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
+        .quiz-question { background: rgba(20, 18, 40, 0.6); border-radius: 20px; padding: 20px; margin-bottom: 15px; }
+        .quiz-option { background: rgba(30, 25, 55, 0.6); border: 1px solid rgba(100, 80, 160, 0.4); border-radius: 40px; padding: 12px 18px; margin: 8px 0; cursor: pointer; transition: 0.2s; }
+        .quiz-option:hover, .quiz-option.selected { background: rgba(138, 106, 208, 0.5); border-color: #8a6ad0; }
         
-        .quiz-option {
-            background: rgba(30, 25, 55, 0.5);
-            border: 1px solid rgba(100, 80, 160, 0.4);
-            border-radius: 60px;
-            padding: 14px 20px;
-            cursor: pointer;
+        .results-container {
+            margin-top: 25px;
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        .results-container.show { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .result-chakra-row {
+            background: rgba(20, 18, 45, 0.6);
+            border-radius: 20px;
+            padding: 18px;
+            margin-bottom: 15px;
+            border-left: 4px solid;
             transition: all 0.2s;
-            font-size: 0.95rem;
         }
-        
-        .quiz-option:hover {
-            background: rgba(138, 106, 208, 0.3);
-            border-color: #8a6ad0;
-            transform: translateX(5px);
-        }
-        
-        .quiz-option.selected {
-            background: rgba(138, 106, 208, 0.6);
-            border-color: #c0a0ff;
-            box-shadow: 0 0 10px rgba(138, 106, 208, 0.3);
-        }
-        
-        .quiz-navigation {
+        .result-chakra-header {
             display: flex;
             justify-content: space-between;
-            margin-top: 25px;
-            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 10px;
         }
+        .result-chakra-name { font-size: 1.2rem; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+        .severity-badge { padding: 4px 12px; border-radius: 30px; font-size: 0.7rem; font-weight: 600; }
+        .severity-high { background: #8a3030; color: #ffa0a0; }
+        .severity-moderate { background: #8a6030; color: #ffd0a0; }
+        .severity-mild { background: #2a6030; color: #a0ffa0; }
+        .severity-balanced { background: #2a4a70; color: #a0d0ff; }
+        .progress-chakra { height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; margin: 10px 0; overflow: hidden; }
+        .progress-chakra-fill { height: 100%; width: 0%; border-radius: 3px; transition: width 0.5s ease; }
+        .recommendation-text { margin-top: 12px; font-size: 0.85rem; color: #c0b0e0; line-height: 1.5; }
         
         .btn {
             background: linear-gradient(145deg, #2a2048, #1a1238);
@@ -337,161 +210,34 @@
             font-weight: 500;
             color: #d0c0ff;
             cursor: pointer;
-            transition: all 0.3s ease;
         }
+        .btn-primary { background: linear-gradient(145deg, #3a2860, #221a48); border-color: #8a6ad0; }
+        .btn-primary:hover { transform: translateY(-2px); background: linear-gradient(145deg, #4a3870, #322a58); }
         
-        .btn-primary {
-            background: linear-gradient(145deg, #3a2860, #221a48);
-            border-color: #8a6ad0;
-        }
+        .footer { text-align: center; color: #6a5a90; font-size: 0.75rem; margin-top: 40px; padding-top: 20px; border-top: 1px solid #2a2048; }
         
-        .btn-primary:hover {
-            background: linear-gradient(145deg, #4a3870, #322a58);
-            transform: translateY(-2px);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            border-color: #5a4a90;
-        }
-        
-        .btn-secondary:hover {
-            background: rgba(100, 80, 160, 0.3);
-            transform: translateY(-2px);
-        }
-        
-        .quiz-results {
-            margin-top: 30px;
-            padding: 25px;
-            background: linear-gradient(145deg, rgba(138, 106, 208, 0.2), rgba(100, 80, 160, 0.1));
-            border-radius: 24px;
-            display: none;
-            border: 1px solid rgba(138, 106, 208, 0.4);
-        }
-        
-        .quiz-results.show {
-            display: block;
-            animation: fadeIn 0.5s ease;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .result-chakra-card {
-            background: rgba(20, 18, 45, 0.6);
-            border-radius: 20px;
-            padding: 20px;
-            margin: 15px 0;
-            border-left: 4px solid;
-            transition: all 0.3s;
-        }
-        
-        .result-chakra-card.highlight {
-            background: rgba(138, 106, 208, 0.25);
-            transform: scale(1.01);
-        }
-        
-        .result-chakra-name {
-            font-size: 1.3rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .severity-badge {
-            font-size: 0.7rem;
-            padding: 4px 12px;
-            border-radius: 30px;
-            background: rgba(0,0,0,0.4);
-        }
-        
-        .severity-high { background: #8a3030; color: #ffa0a0; }
-        .severity-moderate { background: #8a6030; color: #ffd0a0; }
-        .severity-mild { background: #2a6030; color: #a0ffa0; }
-        
-        .result-recommendation {
-            margin-top: 12px;
-            font-size: 0.9rem;
-            color: #c0b0e0;
-        }
-        
-        .chakra-detail {
-            background: rgba(10, 8, 25, 0.75);
-            backdrop-filter: blur(20px);
-            border-radius: 40px;
-            border: 1px solid rgba(140, 110, 210, 0.4);
-            overflow: hidden;
-            margin-bottom: 30px;
-        }
-        
-        .chakra-header {
-            padding: 30px 30px 20px;
-            border-bottom: 1px solid rgba(140, 110, 210, 0.3);
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-        }
-        
-        .chakra-name { font-size: 2rem; font-weight: 500; background: linear-gradient(135deg, #ffffff, #c0b0ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .chakra-sanskrit { font-size: 1rem; color: #b0a0e0; font-style: italic; }
-        .color-dot { width: 20px; height: 20px; border-radius: 50%; }
-        .chakra-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 15px; padding: 20px 30px; background: rgba(0,0,0,0.3); }
-        .stat-item { text-align: center; }
-        .stat-label { font-size: 0.7rem; text-transform: uppercase; color: #b0a0e0; }
-        .stat-value { font-size: 1rem; font-weight: 600; color: white; margin-top: 4px; }
-        .chakra-content { padding: 25px 30px; }
-        .section-title { font-size: 1.2rem; font-weight: 500; color: #e0c0ff; margin: 20px 0 15px; border-left: 3px solid currentColor; padding-left: 15px; }
-        .symptom-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 15px 0; }
-        .symptom-item { background: rgba(255,255,255,0.08); padding: 8px 15px; border-radius: 20px; font-size: 0.85rem; }
-        .crystal-list { display: flex; flex-wrap: wrap; gap: 10px; margin: 10px 0; }
-        .crystal-tag { background: rgba(138, 106, 208, 0.25); border: 1px solid rgba(138, 106, 208, 0.5); border-radius: 30px; padding: 6px 14px; font-size: 0.8rem; }
-        .affirmation-box { background: linear-gradient(145deg, rgba(138, 106, 208, 0.2), rgba(100, 80, 160, 0.1)); border-left: 4px solid; padding: 20px; border-radius: 20px; margin: 20px 0; font-style: italic; }
-        .mantra { font-size: 2rem; font-weight: 500; text-align: center; letter-spacing: 8px; color: #ffbc6c; margin: 20px 0; text-shadow: 0 0 20px rgba(255, 188, 108, 0.5); }
-        .meditation-guide { background: linear-gradient(145deg, rgba(40, 35, 70, 0.5), rgba(20, 18, 45, 0.7)); border-radius: 20px; padding: 20px; margin: 15px 0; border: 1px solid rgba(138, 106, 208, 0.3); }
-        
-        .cosmic-footer {
-            margin-top: 40px;
-            text-align: center;
-            color: #6a5a90;
-            font-size: 0.8rem;
-            border-top: 1px solid #2a2048;
-            padding-top: 20px;
-        }
-        
-        @media (max-width: 700px) {
-            .chakra-header { flex-direction: column; align-items: flex-start; }
-            .chakra-name { font-size: 1.5rem; }
-            .quiz-question { padding: 18px; }
-            .question-text { font-size: 1rem; }
+        @media (max-width: 650px) {
+            .chakra-name { font-size: 1.4rem; }
+            .stats-grid { grid-template-columns: 1fr 1fr; }
+            .mantra { font-size: 1.3rem; }
+            .result-chakra-header { flex-direction: column; align-items: flex-start; }
         }
     </style>
 </head>
 <body>
-    <div class="orb-background" id="orbBackground">
-        <div class="glowing-orb" id="glowingOrb"></div>
-        <div class="inner-glow" id="innerGlow"></div>
-    </div>
+    <div class="orb-background"><div class="glowing-orb" id="glowingOrb"></div></div>
     <div class="star-field" id="starField"></div>
-    <div class="flower-of-life"></div>
-    <div class="sacred-circles">
-        <div class="circle-ring"></div><div class="circle-ring"></div><div class="circle-ring"></div><div class="circle-ring"></div><div class="circle-ring"></div>
-    </div>
     
     <div class="cosmic-container">
         <div class="stellar-header">
             <div class="logo-container"><img src="https://i.ibb.co/qLvdSn6z/Green-Logo-Glow.png" alt="Logo" class="your-logo"></div>
             <div class="glyph-container"><span class="glyph">🌀</span><span class="glyph">👁️</span><span class="glyph">🌀</span></div>
             <h1>CHAKRA HEALING GUIDE</h1>
-            <div class="subtitle">✦ COMPLETE ASSESSMENT · PERSONALIZED HEALING ✦</div>
+            <div class="subtitle">✦ COMPLETE 7-CHAKRA ASSESSMENT ✦</div>
         </div>
 
         <div class="chakra-selector" id="chakraSelector">
-            <div class="chakra-pill" data-chakra="root" data-color="#d44c2f">🌍 ROOT</div>
+            <div class="chakra-pill active" data-chakra="root" data-color="#e34d2e">🌍 ROOT</div>
             <div class="chakra-pill" data-chakra="sacral" data-color="#ff8c42">💧 SACRAL</div>
             <div class="chakra-pill" data-chakra="solar" data-color="#ffd966">🔥 SOLAR</div>
             <div class="chakra-pill" data-chakra="heart" data-color="#6bcb6b">💚 HEART</div>
@@ -502,318 +248,329 @@
 
         <div id="chakraDetail"></div>
 
-        <div class="quiz-section" id="quizSection">
-            <div class="quiz-header">
-                <h3>🌀 COMPLETE CHAKRA ASSESSMENT</h3>
-                <p>Answer these 28 questions to identify which chakras need attention and their severity level</p>
-            </div>
-            <div class="progress-container"><div class="progress-bar" id="progressBar"></div></div>
+        <div class="quiz-section">
+            <h3 style="text-align: center; margin-bottom: 10px;">🌀 COMPLETE CHAKRA ASSESSMENT</h3>
+            <p style="text-align: center; color: #c0b0e0; margin-bottom: 20px;">Answer 28 questions (4 per chakra) to reveal your full chakra profile</p>
+            <div class="progress-bar"><div class="progress-fill" id="quizProgress"></div></div>
             <div id="quizContainer"></div>
-            <div class="quiz-navigation">
-                <button class="btn btn-secondary" id="prevBtn" onclick="prevQuestion()" style="display:none;">← Previous</button>
+            <div style="display: flex; justify-content: space-between; gap: 12px; margin-top: 15px;">
+                <button class="btn" id="prevBtn" onclick="prevQuestion()" style="display:none;">← Previous</button>
                 <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()">Next →</button>
-                <button class="btn btn-primary" id="submitBtn" onclick="submitQuiz()" style="display:none;">✨ COMPLETE ASSESSMENT ✨</button>
+                <button class="btn btn-primary" id="submitBtn" onclick="submitQuiz()" style="display:none;">✨ SEE COMPLETE RESULTS ✨</button>
             </div>
-            <div id="quizResults" class="quiz-results"></div>
+            <div id="quizResults" class="results-container"></div>
         </div>
 
-        <div class="cosmic-footer">
-            <div>🌀 COMPLETE CHAKRA ASSESSMENT · 28 QUESTIONS · 7 CHAKRAS  👁️</div>
-            <div class="footnote">Based on Alcantara · Morgan · Traditional Wisdom</div>
+        <div class="footer">
+            <div>🌀 28-QUESTION ASSESSMENT · SCORES ALL 7 CHAKRAS · PERSONALIZED RECOMMENDATIONS  👁️</div>
         </div>
     </div>
 
     <script>
-        // ==================== COLOR MAP ====================
+        // Color mapping
         const chakraColors = {
-            root: { main: "#d44c2f", glow: "#ff6b4a", inner: "#ff8c6b" },
-            sacral: { main: "#ff8c42", glow: "#ffaa66", inner: "#ffcc88" },
-            solar: { main: "#ffd966", glow: "#ffe68c", inner: "#fff2b0" },
-            heart: { main: "#6bcb6b", glow: "#8ce08c", inner: "#b0f0b0" },
-            throat: { main: "#6b9eff", glow: "#8cb8ff", inner: "#b0d0ff" },
-            third: { main: "#9b6bff", glow: "#b58cff", inner: "#d0b0ff" },
-            crown: { main: "#d46bff", glow: "#e68cff", inner: "#f8b0ff" }
+            root: "#e34d2e", sacral: "#ff8c42", solar: "#ffd966", heart: "#6bcb6b",
+            throat: "#6b9eff", third: "#9b6bff", crown: "#d46bff"
         };
-
+        
         // ==================== 28 QUESTIONS (4 per chakra) ====================
         const quizQuestions = [
-            // ROOT CHAKRA (4 questions)
-            { text: "I often feel anxious or fearful about money, housing, or basic survival needs.", chakra: "root", weight: 2 },
+            // ROOT (4 questions)
+            { text: "I often feel anxious or fearful about money, housing, or having enough to survive.", chakra: "root", weight: 2 },
             { text: "I feel disconnected from my body or have trouble feeling grounded and present.", chakra: "root", weight: 2 },
             { text: "I experience chronic lower back pain, sciatica, or leg issues.", chakra: "root", weight: 1 },
             { text: "I struggle with feeling safe in the world or trusting that I'll be okay.", chakra: "root", weight: 2 },
-            // SACRAL CHAKRA (4 questions)
+            // SACRAL (4 questions)
             { text: "I feel creatively blocked or struggle to express myself artistically.", chakra: "sacral", weight: 2 },
             { text: "I carry guilt or shame around my sexuality or desires.", chakra: "sacral", weight: 2 },
-            { text: "I have difficulty experiencing pleasure or feel numb emotionally.", chakra: "sacral", weight: 2 },
+            { text: "I have difficulty experiencing pleasure or feel emotionally numb.", chakra: "sacral", weight: 2 },
             { text: "I struggle with intimacy or have relationship issues that feel repetitive.", chakra: "sacral", weight: 1 },
-            // SOLAR PLEXUS CHAKRA (4 questions)
+            // SOLAR PLEXUS (4 questions)
             { text: "I struggle with low self-esteem or feel I'm not good enough.", chakra: "solar", weight: 2 },
             { text: "I often feel powerless or like I have no control over my life.", chakra: "solar", weight: 2 },
             { text: "I have digestive issues like IBS, indigestion, or stomach pain.", chakra: "solar", weight: 1 },
             { text: "I seek approval from others and fear criticism intensely.", chakra: "solar", weight: 1 },
-            // HEART CHAKRA (4 questions)
+            // HEART (4 questions)
             { text: "I struggle to give or receive love freely and openly.", chakra: "heart", weight: 2 },
             { text: "I carry grief, heartache, or resentment from past relationships.", chakra: "heart", weight: 2 },
             { text: "I feel disconnected from myself or others, often lonely.", chakra: "heart", weight: 2 },
             { text: "I find it hard to forgive myself or others for past hurts.", chakra: "heart", weight: 1 },
-            // THROAT CHAKRA (4 questions)
+            // THROAT (4 questions)
             { text: "I struggle to speak my truth or express how I really feel.", chakra: "throat", weight: 2 },
             { text: "I often feel unheard, dismissed, or that my voice doesn't matter.", chakra: "throat", weight: 2 },
             { text: "I have chronic sore throats, thyroid issues, or neck tension.", chakra: "throat", weight: 1 },
             { text: "I hold back what I want to say to avoid conflict or please others.", chakra: "throat", weight: 2 },
-            // THIRD EYE CHAKRA (4 questions)
+            // THIRD EYE (4 questions)
             { text: "I don't trust my intuition or have trouble hearing my inner voice.", chakra: "third", weight: 2 },
             { text: "I overthink everything and struggle to quiet my mind.", chakra: "third", weight: 2 },
             { text: "I have frequent headaches, sinus issues, or vision problems.", chakra: "third", weight: 1 },
             { text: "I feel disconnected from my spiritual side or purpose in life.", chakra: "third", weight: 1 },
-            // CROWN CHAKRA (4 questions)
+            // CROWN (4 questions)
             { text: "I feel disconnected from the divine, source, or something greater.", chakra: "crown", weight: 2 },
             { text: "I struggle to find meaning or purpose in my life.", chakra: "crown", weight: 2 },
             { text: "I experience chronic exhaustion, depression, or feel spiritually empty.", chakra: "crown", weight: 2 },
             { text: "I have difficulty meditating or quieting my mind.", chakra: "crown", weight: 1 }
         ];
-
-        let userAnswers = new Array(quizQuestions.length).fill(null);
-        let currentQuestion = 0;
-
-        // ==================== CHAKRA DATA ====================
+        
+        // ==================== COMPLETE CHAKRA DATABASE ====================
         const chakraData = {
-            root: { name: "Root Chakra", sanskrit: "Muladhara", location: "Base of spine", color: "Red", element: "Earth", mantra: "LAM", gland: "Adrenals", governs: "Survival, security, grounding", balanced: "Safe, grounded, secure", blocked: "Fear, anxiety, insecurity", crystals: ["Ruby", "Garnet", "Black Tourmaline", "Red Jasper"], essentialOils: ["Vetiver", "Patchouli", "Sandalwood"], yogaPoses: ["Warrior", "Tree Pose", "Child's Pose"], affirmation: "I am safe and grounded.", ritual: "Walk barefoot on earth, connect with nature daily." },
-            sacral: { name: "Sacral Chakra", sanskrit: "Svadhisthana", location: "Lower abdomen", color: "Orange", element: "Water", mantra: "VAM", gland: "Ovaries/Testicles", governs: "Creativity, emotions, sexuality", balanced: "Creative flow, emotional balance", blocked: "Creative blocks, guilt, shame", crystals: ["Carnelian", "Moonstone", "Orange Calcite"], essentialOils: ["Ylang ylang", "Sandalwood", "Rosewood"], yogaPoses: ["Bound Angle", "Pigeon", "Goddess"], affirmation: "I honor my emotions and creativity.", ritual: "Dance freely, take a warm bath, express yourself creatively." },
-            solar: { name: "Solar Plexus Chakra", sanskrit: "Manipura", location: "Upper abdomen", color: "Yellow", element: "Fire", mantra: "RAM", gland: "Pancreas", governs: "Personal power, confidence, will", balanced: "Confident, strong will", blocked: "Low self-esteem, powerlessness", crystals: ["Citrine", "Tiger's Eye", "Yellow Calcite"], essentialOils: ["Lemon", "Rosemary", "Lavender"], yogaPoses: ["Boat Pose", "Sun Salutations", "Twists"], affirmation: "I am powerful and confident.", ritual: "Stand in Warrior pose, light a yellow candle, affirm your worth." },
-            heart: { name: "Heart Chakra", sanskrit: "Anahata", location: "Center of chest", color: "Green", element: "Air", mantra: "YAM", gland: "Thymus", governs: "Love, compassion, connection", balanced: "Loving, open-hearted", blocked: "Grief, loneliness, resentment", crystals: ["Rose Quartz", "Emerald", "Green Aventurine"], essentialOils: ["Rose", "Geranium", "Bergamot"], yogaPoses: ["Camel", "Cobra", "Fish Pose"], affirmation: "I am love, I give and receive love freely.", ritual: "Place rose quartz on heart, practice forgiveness, open your heart." },
-            throat: { name: "Throat Chakra", sanskrit: "Vishuddha", location: "Throat", color: "Blue", element: "Sound", mantra: "HAM", gland: "Thyroid", governs: "Communication, truth, expression", balanced: "Authentic expression, clear communication", blocked: "Fear of speaking, silenced", crystals: ["Aquamarine", "Lapis Lazuli", "Sodalite"], essentialOils: ["Lavender", "Frankincense", "Rosemary"], yogaPoses: ["Shoulderstand", "Fish Pose", "Neck rolls"], affirmation: "I speak my truth with clarity and love.", ritual: "Sing, chant, write your truth, wear blue." },
-            third: { name: "Third Eye Chakra", sanskrit: "Ajna", location: "Between eyebrows", color: "Indigo", element: "Light", mantra: "OM", gland: "Pineal", governs: "Intuition, insight, wisdom", balanced: "Clear intuition, inner knowing", blocked: "Overthinking, distrust of intuition", crystals: ["Amethyst", "Lapis Lazuli", "Fluorite"], essentialOils: ["Lavender", "Frankincense", "Sandalwood"], yogaPoses: ["Child's Pose", "Forward Fold", "Meditation"], affirmation: "I trust my intuition and inner wisdom.", ritual: "Keep a dream journal, meditate daily, reduce screen time." },
-            crown: { name: "Crown Chakra", sanskrit: "Sahasrara", location: "Top of head", color: "Violet", element: "Divine Consciousness", mantra: "OM", gland: "Pituitary", governs: "Spiritual connection, enlightenment", balanced: "Connected to divine, inner peace", blocked: "Disconnection, spiritual emptiness", crystals: ["Clear Quartz", "Selenite", "Amethyst"], essentialOils: ["Frankincense", "Lotus", "Sandalwood"], yogaPoses: ["Headstand", "Meditation", "Corpse Pose"], affirmation: "I am connected to all that is.", ritual: "Silent meditation, gratitude practice, connect with nature." }
+            root: { name: "Root Chakra", sanskrit: "Muladhara", location: "Base of spine", color: "Red", element: "Earth", mantra: "LAM", gland: "Adrenals", governs: "Survival, security, grounding, basic needs",
+                balanced: "Safe, grounded, secure, financially stable, connected to body",
+                blocked: "Fear, anxiety, insecurity, financial worry, feeling unsafe",
+                crystals: ["Ruby", "Garnet", "Black Tourmaline", "Red Jasper", "Hematite", "Obsidian", "Smoky Quartz"],
+                oils: ["Vetiver", "Patchouli", "Sandalwood", "Myrrh"],
+                yoga: ["Warrior I", "Tree Pose", "Chair Pose", "Child's Pose", "Mountain Pose"],
+                affirmation: "I am safe. I am grounded. All my needs are met. I trust life.",
+                ritual: "Walk barefoot on earth, sit with your back against a tree, connect with nature daily.",
+                meditation: "Visualize red light at base of spine. Chant LAM. Feel roots extending into the earth." },
+            sacral: { name: "Sacral Chakra", sanskrit: "Svadhisthana", location: "Lower abdomen", color: "Orange", element: "Water", mantra: "VAM", gland: "Ovaries/Testicles", governs: "Creativity, emotions, sexuality, pleasure",
+                balanced: "Creative flow, emotional balance, healthy relationships, sensual joy",
+                blocked: "Creative blocks, guilt, shame, emotional numbness, relationship issues",
+                crystals: ["Carnelian", "Moonstone", "Amber", "Orange Calcite", "Sunstone"],
+                oils: ["Ylang ylang", "Sandalwood", "Rosewood", "Patchouli"],
+                yoga: ["Bound Angle", "Pigeon", "Goddess", "Happy Baby", "Butterfly"],
+                affirmation: "I honor my emotions and creativity. I embrace pleasure. I am worthy.",
+                ritual: "Take a warm bath with orange essential oil. Dance freely. Express yourself creatively.",
+                meditation: "Visualize orange light in lower belly. Chant VAM. Allow emotions to flow like water." },
+            solar: { name: "Solar Plexus Chakra", sanskrit: "Manipura", location: "Upper abdomen", color: "Yellow", element: "Fire", mantra: "RAM", gland: "Pancreas", governs: "Personal power, self-esteem, willpower, confidence",
+                balanced: "Confident, strong will, self-disciplined, good self-esteem, inner fire",
+                blocked: "Low self-esteem, powerlessness, indecision, victim mentality, digestive issues",
+                crystals: ["Citrine", "Tiger's Eye", "Yellow Calcite", "Rutilated Quartz", "Amber"],
+                oils: ["Lemon", "Rosemary", "Lavender", "Roman Chamomile"],
+                yoga: ["Boat Pose", "Sun Salutations", "Twists", "Warrior III", "Plank"],
+                affirmation: "I am powerful. I am confident. I stand in my truth. I am worthy.",
+                ritual: "Light a yellow candle. Write down your strengths. Stand in Warrior pose. Set boundaries.",
+                meditation: "Visualize yellow sun in solar plexus. Chant RAM. Feel your inner fire growing." },
+            heart: { name: "Heart Chakra", sanskrit: "Anahata", location: "Center of chest", color: "Green", element: "Air", mantra: "YAM", gland: "Thymus", governs: "Love, compassion, connection, forgiveness",
+                balanced: "Loving, compassionate, forgiving, open-hearted, connected to self and others",
+                blocked: "Grief, loneliness, inability to love or receive love, resentment, jealousy",
+                crystals: ["Rose Quartz", "Emerald", "Green Aventurine", "Jade", "Malachite", "Peridot"],
+                oils: ["Rose", "Geranium", "Bergamot", "Lavender", "Ylang ylang"],
+                yoga: ["Camel", "Cobra", "Fish", "Bridge", "Eagle", "Upward Dog"],
+                affirmation: "I am love. I give and receive love freely. My heart is open. I forgive.",
+                ritual: "Place rose quartz on heart. Write a forgiveness letter. Do something kind for yourself.",
+                meditation: "Visualize green light in chest. Chant YAM. Feel your heart expanding with love." },
+            throat: { name: "Throat Chakra", sanskrit: "Vishuddha", location: "Throat", color: "Blue", element: "Sound", mantra: "HAM", gland: "Thyroid", governs: "Communication, truth, self-expression",
+                balanced: "Authentic expression, clear communication, good listener, speaks truth",
+                blocked: "Fear of speaking, feeling silenced, unable to express truth, shyness",
+                crystals: ["Aquamarine", "Lapis Lazuli", "Sodalite", "Turquoise", "Blue Kyanite"],
+                oils: ["Lavender", "Frankincense", "Rosemary", "German Chamomile"],
+                yoga: ["Shoulderstand", "Fish Pose", "Plow Pose", "Neck rolls", "Lion's Breath"],
+                affirmation: "I speak my truth with clarity and love. My voice matters. I am heard.",
+                ritual: "Sing loudly. Write what you've been afraid to say. Wear blue. Hum or chant daily.",
+                meditation: "Visualize blue light at throat. Chant HAM. Release all unspoken words." },
+            third: { name: "Third Eye Chakra", sanskrit: "Ajna", location: "Between eyebrows", color: "Indigo", element: "Light", mantra: "OM", gland: "Pineal", governs: "Intuition, insight, wisdom, psychic ability",
+                balanced: "Clear intuition, inner wisdom, vivid imagination, spiritual connection",
+                blocked: "Overthinking, distrust of intuition, confusion, lack of direction, rigid thinking",
+                crystals: ["Amethyst", "Lapis Lazuli", "Fluorite", "Sugilite", "Clear Quartz", "Tanzanite"],
+                oils: ["Lavender", "Frankincense", "Sandalwood"],
+                yoga: ["Child's Pose", "Forward Fold", "Headstand", "Meditation", "Downward Dog"],
+                affirmation: "I trust my intuition. I see clearly. Wisdom flows through me.",
+                ritual: "Keep a dream journal. Place amethyst on forehead. Reduce screen time. Look at stars.",
+                meditation: "Visualize indigo light between brows. Chant OM. Trust the images that arise." },
+            crown: { name: "Crown Chakra", sanskrit: "Sahasrara", location: "Top of head", color: "Violet", element: "Divine Consciousness", mantra: "OM", gland: "Pituitary", governs: "Spiritual connection, enlightenment, unity",
+                balanced: "Spiritual connection, inner peace, understanding of unity, wisdom, purpose",
+                blocked: "Disconnection from spirit, lack of purpose, depression, spiritual emptiness",
+                crystals: ["Clear Quartz", "Selenite", "Amethyst", "Labradorite", "Moonstone", "Herkimer Diamond"],
+                oils: ["Frankincense", "Lotus", "Sandalwood", "Peppermint"],
+                yoga: ["Headstand", "Meditation", "Corpse Pose", "Tree Pose", "Mountain Pose"],
+                affirmation: "I am connected to all that is. I am one with the divine. I am at peace.",
+                ritual: "Silent meditation daily. Gratitude practice. Create a sacred altar. Spend time in nature.",
+                meditation: "Visualize violet-white light at crown. Chant OM. Feel connection to all that is." }
         };
-
-        // ==================== RENDER QUIZ ====================
-        function renderCurrentQuestion() {
+        
+        let answers = new Array(quizQuestions.length).fill(null);
+        let currentQ = 0;
+        
+        function renderQuiz() {
             const container = document.getElementById('quizContainer');
-            const q = quizQuestions[currentQuestion];
-            const selectedValue = userAnswers[currentQuestion];
-            
+            const q = quizQuestions[currentQ];
             const options = [
                 { value: 3, label: "🔥 Strongly Agree — This resonates deeply with me" },
                 { value: 2, label: "🌙 Somewhat Agree — I experience this often" },
                 { value: 1, label: "💧 Neutral / Sometimes — I notice this occasionally" },
-                { value: 0, label: "✨ Disagree — This rarely or never applies to me" }
+                { value: 0, label: "✨ Disagree — This rarely or never applies" }
             ];
+            const selected = answers[currentQ];
             
             let html = `<div class="quiz-question">
-                <div class="question-text">${currentQuestion + 1}. ${q.text}</div>
-                <div class="quiz-options">`;
-            
+                <div style="font-size: 1rem; font-weight: 500; margin-bottom: 15px;">${currentQ + 1}/28: ${q.text}</div>`;
             options.forEach(opt => {
-                const isSelected = selectedValue === opt.value;
-                html += `<div class="quiz-option ${isSelected ? 'selected' : ''}" data-value="${opt.value}">
-                            <span style="font-size:1.2rem; margin-right:10px;">${opt.label.substring(0,2)}</span> ${opt.label}
-                         </div>`;
+                html += `<div class="quiz-option ${selected === opt.value ? 'selected' : ''}" data-value="${opt.value}">${opt.label}</div>`;
             });
-            html += `</div></div>`;
+            html += `</div>`;
             container.innerHTML = html;
             
             document.querySelectorAll('.quiz-option').forEach(el => {
                 el.addEventListener('click', function() {
-                    const value = parseInt(this.dataset.value);
-                    userAnswers[currentQuestion] = value;
+                    const val = parseInt(this.dataset.value);
+                    answers[currentQ] = val;
                     document.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
                     this.classList.add('selected');
+                    updateProgress();
                 });
             });
-            
             updateProgress();
             updateButtons();
         }
         
         function updateProgress() {
-            const answered = userAnswers.filter(a => a !== null).length;
+            const answered = answers.filter(a => a !== null).length;
             const percent = (answered / quizQuestions.length) * 100;
-            document.getElementById('progressBar').style.width = `${percent}%`;
+            document.getElementById('quizProgress').style.width = percent + '%';
         }
         
         function updateButtons() {
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            const submitBtn = document.getElementById('submitBtn');
-            
-            prevBtn.style.display = currentQuestion > 0 ? 'block' : 'none';
-            
-            if (currentQuestion === quizQuestions.length - 1) {
-                nextBtn.style.display = 'none';
-                submitBtn.style.display = 'block';
+            document.getElementById('prevBtn').style.display = currentQ > 0 ? 'block' : 'none';
+            if (currentQ === quizQuestions.length - 1) {
+                document.getElementById('nextBtn').style.display = 'none';
+                document.getElementById('submitBtn').style.display = 'block';
             } else {
-                nextBtn.style.display = 'block';
-                submitBtn.style.display = 'none';
+                document.getElementById('nextBtn').style.display = 'block';
+                document.getElementById('submitBtn').style.display = 'none';
             }
         }
         
         function nextQuestion() {
-            if (userAnswers[currentQuestion] === null) {
-                alert("Please answer the question before continuing.");
-                return;
-            }
-            if (currentQuestion < quizQuestions.length - 1) {
-                currentQuestion++;
-                renderCurrentQuestion();
-            }
+            if (answers[currentQ] === null) { alert("Please answer before continuing."); return; }
+            if (currentQ < quizQuestions.length - 1) { currentQ++; renderQuiz(); }
         }
         
-        function prevQuestion() {
-            if (currentQuestion > 0) {
-                currentQuestion--;
-                renderCurrentQuestion();
-            }
-        }
+        function prevQuestion() { if (currentQ > 0) { currentQ--; renderQuiz(); } }
         
         function submitQuiz() {
-            if (userAnswers[currentQuestion] === null) {
-                alert("Please answer the last question before submitting.");
-                return;
-            }
+            if (answers[currentQ] === null) { alert("Please answer the last question."); return; }
             
-            // Calculate scores per chakra
+            // Calculate scores per chakra (max 3 per question × weight × 4 questions)
             const scores = { root: 0, sacral: 0, solar: 0, heart: 0, throat: 0, third: 0, crown: 0 };
             const maxScores = { root: 0, sacral: 0, solar: 0, heart: 0, throat: 0, third: 0, crown: 0 };
             
             quizQuestions.forEach((q, idx) => {
-                const answer = userAnswers[idx];
-                if (answer !== null) {
-                    scores[q.chakra] += answer * q.weight;
-                    maxScores[q.chakra] += 3 * q.weight;
-                }
+                const ans = answers[idx] || 0;
+                scores[q.chakra] += ans * q.weight;
+                maxScores[q.chakra] += 3 * q.weight;
             });
             
-            // Calculate percentages and severity
+            // Build results with severity and recommendations
             const results = [];
-            for (let chakra in scores) {
-                const max = maxScores[chakra];
+            for (let chakra of ['root', 'sacral', 'solar', 'heart', 'throat', 'third', 'crown']) {
                 const score = scores[chakra];
-                const percent = max > 0 ? (score / max) * 100 : 0;
-                let severity = "balanced";
-                let severityClass = "";
-                if (percent >= 66) { severity = "high"; severityClass = "severity-high"; }
-                else if (percent >= 33) { severity = "moderate"; severityClass = "severity-moderate"; }
-                else if (percent > 0) { severity = "mild"; severityClass = "severity-mild"; }
-                else { severity = "balanced"; severityClass = ""; }
-                
-                results.push({ chakra, percent, severity, severityClass, score, max });
+                const maxScore = maxScores[chakra];
+                const percent = maxScore > 0 ? (score / maxScore) * 100 : 0;
+                let severity = "balanced", severityClass = "severity-balanced", recommendation = "";
+                if (percent >= 70) {
+                    severity = "high"; severityClass = "severity-high";
+                    recommendation = `${chakraData[chakra].name} requires immediate attention. Start with daily ${chakraData[chakra].crystals[0]} crystal work and the ${chakraData[chakra].yoga[0]} yoga pose. Practice the affirmation daily.`;
+                } else if (percent >= 40) {
+                    severity = "moderate"; severityClass = "severity-moderate";
+                    recommendation = `${chakraData[chakra].name} needs consistent healing. Incorporate ${chakraData[chakra].oils[0]} essential oil into your routine and meditate with the mantra ${chakraData[chakra].mantra}.`;
+                } else if (percent >= 10) {
+                    severity = "mild"; severityClass = "severity-mild";
+                    recommendation = `${chakraData[chakra].name} shows early signs of imbalance. Gentle awareness and the ritual: ${chakraData[chakra].ritual.substring(0, 70)}...`;
+                } else {
+                    severity = "balanced"; severityClass = "severity-balanced";
+                    recommendation = `${chakraData[chakra].name} is balanced. Maintain with regular meditation and awareness.`;
+                }
+                results.push({ chakra, name: chakraData[chakra].name, color: chakraColors[chakra], percent, severity, severityClass, recommendation });
             }
             
-            results.sort((a,b) => b.percent - a.percent);
+            results.sort((a, b) => b.percent - a.percent);
             
-            // Build results HTML
-            let resultsHtml = `<h3 style="margin-bottom: 20px;">📊 YOUR CHAKRA ASSESSMENT RESULTS</h3>
-                               <p style="margin-bottom: 20px;">Based on your answers, here's the current state of your 7 chakras (highest imbalance first):</p>`;
+            // Build HTML
+            let html = `<h3 style="margin-bottom: 20px;">📊 YOUR COMPLETE CHAKRA PROFILE</h3>
+                        <p style="margin-bottom: 20px;">Based on your 28 answers, here is the current state of each chakra (highest imbalance first):</p>`;
             
             results.forEach(r => {
-                const data = chakraData[r.chakra];
-                const color = chakraColors[r.chakra].main;
-                const severityText = r.severity === "high" ? "⚠️ SIGNIFICANT IMBALANCE - Needs immediate attention" :
-                                    r.severity === "moderate" ? "🌙 MODERATE IMBALANCE - Requires healing work" :
-                                    r.severity === "mild" ? "💧 MILD IMBALANCE - Gentle attention needed" :
-                                    "✨ BALANCED - Maintain with regular practice";
-                
-                resultsHtml += `<div class="result-chakra-card ${r.percent > 0 ? 'highlight' : ''}" style="border-left-color: ${color};">
-                    <div class="result-chakra-name">
-                        <span>${data.name}</span>
-                        <span class="severity-badge ${r.severityClass}">${r.severity.toUpperCase()} ${Math.round(r.percent)}%</span>
+                html += `<div class="result-chakra-row" style="border-left-color: ${r.color};">
+                    <div class="result-chakra-header">
+                        <div class="result-chakra-name">
+                            <span style="font-size: 1.3rem;">${r.name}</span>
+                            <span class="severity-badge ${r.severityClass}">${r.severity.toUpperCase()} ${Math.round(r.percent)}%</span>
+                        </div>
                     </div>
-                    <div style="height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; margin: 12px 0;">
-                        <div style="width: ${r.percent}%; height: 100%; background: ${color}; border-radius: 3px;"></div>
-                    </div>
-                    <div><strong>Blocked signs:</strong> ${data.blocked}</div>
-                    <div class="result-recommendation"><strong>🌀 Healing suggestion:</strong> ${data.ritual.substring(0, 100)}...</div>
+                    <div class="progress-chakra"><div class="progress-chakra-fill" style="width: ${r.percent}%; background: ${r.color};"></div></div>
+                    <div class="recommendation-text"><strong>🌀 Healing recommendation:</strong> ${r.recommendation}</div>
                 </div>`;
             });
             
-            resultsHtml += `<div style="margin-top: 25px; padding: 20px; background: rgba(138,106,208,0.2); border-radius: 20px;">
-                <strong>✨ NEXT STEPS:</strong><br>
-                1. Click on any chakra above in the colored selector to see its full healing guide<br>
-                2. Start with your highest imbalance (shown first)<br>
-                3. Practice daily meditation, use crystals, and incorporate the recommended rituals<br>
-                4. Re-take this assessment in 4-6 weeks to track your progress
-            </div>`;
+            html += `<div style="margin-top: 25px; padding: 20px; background: rgba(138,106,208,0.15); border-radius: 20px;">
+                        <strong>✨ NEXT STEPS:</strong><br>
+                        1. Start with your highest imbalance (first one shown above)<br>
+                        2. Click on any chakra name in the colored selector to see its complete healing guide<br>
+                        3. Practice daily: crystals, essential oils, yoga, and affirmations<br>
+                        4. Re-take this assessment in 4-6 weeks to track your progress
+                     </div>`;
             
-            document.getElementById('quizResults').innerHTML = resultsHtml;
+            document.getElementById('quizResults').innerHTML = html;
             document.getElementById('quizResults').classList.add('show');
-            document.getElementById('quizSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            window.scrollTo({ top: document.getElementById('quizResults').offsetTop - 20, behavior: 'smooth' });
             
-            // Auto-select the highest imbalance chakra in the detail view
-            const highest = results.find(r => r.percent > 0);
-            if (highest) {
-                selectChakra(highest.chakra);
-            }
+            // Auto-select the highest imbalance chakra
+            const highest = results.find(r => r.severity !== "balanced");
+            if (highest) selectChakra(highest.chakra);
         }
         
-        // ==================== UI FUNCTIONS ====================
         function updateOrbColor(chakraId) {
-            const colors = chakraColors[chakraId] || chakraColors.root;
-            const glowingOrb = document.getElementById('glowingOrb');
-            const innerGlow = document.getElementById('innerGlow');
-            if (glowingOrb && innerGlow) {
-                glowingOrb.style.background = `radial-gradient(circle at 30% 35%, ${colors.glow}, ${colors.main}, ${colors.main}aa)`;
-                glowingOrb.style.boxShadow = `0 0 80px ${colors.glow}`;
-                innerGlow.style.background = `radial-gradient(circle at 40% 45%, ${colors.inner}, ${colors.glow}88)`;
-            }
+            const orb = document.getElementById('glowingOrb');
+            const color = chakraColors[chakraId] || "#8a6ad0";
+            orb.style.background = `radial-gradient(circle at 30% 35%, ${color}cc, ${color}66, ${color}33)`;
+            orb.style.boxShadow = `0 0 80px ${color}`;
         }
         
         function generateStars() {
-            const starField = document.getElementById('starField');
-            if (!starField) return;
-            starField.innerHTML = '';
-            for (let i = 0; i < 180; i++) {
+            const field = document.getElementById('starField');
+            if (!field) return;
+            field.innerHTML = '';
+            for (let i = 0; i < 150; i++) {
                 const star = document.createElement('div');
                 star.className = 'star';
-                const size = Math.random() * 3 + 1;
+                const size = Math.random() * 2.5 + 1;
                 star.style.width = `${size}px`;
                 star.style.height = `${size}px`;
                 star.style.left = `${Math.random() * 100}%`;
                 star.style.top = `${Math.random() * 100}%`;
                 star.style.setProperty('--duration', `${Math.random() * 3 + 2}s`);
-                star.style.setProperty('--opacity', `${Math.random() * 0.6 + 0.2}`);
-                starField.appendChild(star);
+                star.style.setProperty('--opacity', `${Math.random() * 0.5 + 0.2}`);
+                field.appendChild(star);
             }
         }
         
         function selectChakra(chakraId) {
             document.querySelectorAll('.chakra-pill').forEach(p => p.classList.remove('active'));
-            const activePill = Array.from(document.querySelectorAll('.chakra-pill')).find(p => p.dataset.chakra === chakraId);
-            if (activePill) activePill.classList.add('active');
+            const active = Array.from(document.querySelectorAll('.chakra-pill')).find(p => p.dataset.chakra === chakraId);
+            if (active) active.classList.add('active');
             renderChakraDetail(chakraId);
             updateOrbColor(chakraId);
             window.scrollTo({ top: document.getElementById('chakraDetail').offsetTop - 20, behavior: 'smooth' });
         }
         
         function renderChakraDetail(chakraId) {
-            const data = chakraData[chakraId];
-            if (!data) return;
-            const colors = chakraColors[chakraId];
-            const dotColor = colors.main;
+            const c = chakraData[chakraId];
+            if (!c) return;
+            const color = chakraColors[chakraId];
             
-            const html = `<div class="chakra-detail">
+            const html = `<div class="chakra-card">
                 <div class="chakra-header">
-                    <div class="chakra-title"><span class="chakra-name">${data.name}</span><span class="chakra-sanskrit">${data.sanskrit}</span></div>
-                    <div class="chakra-color-badge"><div class="color-dot" style="background: ${dotColor}; box-shadow: 0 0 10px ${dotColor};"></div><span>${data.color}</span></div>
+                    <div><div class="chakra-name">${c.name}</div><div class="chakra-sanskrit">${c.sanskrit}</div></div>
+                    <div class="color-badge"><div class="color-dot" style="background: ${color}; box-shadow: 0 0 10px ${color};"></div><span>${c.color}</span></div>
                 </div>
-                <div class="chakra-stats">
-                    <div class="stat-item"><div class="stat-label">LOCATION</div><div class="stat-value">${data.location}</div></div>
-                    <div class="stat-item"><div class="stat-label">ELEMENT</div><div class="stat-value">${data.element}</div></div>
-                    <div class="stat-item"><div class="stat-label">MANTRA</div><div class="stat-value">${data.mantra}</div></div>
-                    <div class="stat-item"><div class="stat-label">GLAND</div><div class="stat-value">${data.gland}</div></div>
+                <div class="stats-grid">
+                    <div class="stat"><div class="stat-label">LOCATION</div><div class="stat-value">${c.location}</div></div>
+                    <div class="stat"><div class="stat-label">ELEMENT</div><div class="stat-value">${c.element}</div></div>
+                    <div class="stat"><div class="stat-label">GLAND</div><div class="stat-value">${c.gland}</div></div>
+                    <div class="stat"><div class="stat-label">MANTRA</div><div class="stat-value">${c.mantra}</div></div>
                 </div>
-                <div class="chakra-content">
-                    <div class="section-title">🌀 GOVERNS</div><p>${data.governs}</p>
-                    <div class="section-title">🌿 WHEN BALANCED</div><p>${data.balanced}</p>
-                    <div class="section-title">⚠️ WHEN BLOCKED</div><p>${data.blocked}</p>
-                    <div class="section-title">💎 HEALING CRYSTALS</div><div class="crystal-list">${data.crystals.map(c => `<span class="crystal-tag">${c}</span>`).join('')}</div>
-                    <div class="section-title">🌿 ESSENTIAL OILS</div><div class="crystal-list">${data.essentialOils.map(o => `<span class="crystal-tag">${o}</span>`).join('')}</div>
-                    <div class="section-title">🧘 YOGA POSES</div><div class="crystal-list">${data.yogaPoses.map(p => `<span class="crystal-tag">${p}</span>`).join('')}</div>
-                    <div class="affirmation-box" style="border-left-color: ${dotColor};"><strong>✨ DAILY AFFIRMATION</strong><br>"${data.affirmation}"</div>
-                    <div class="section-title">🧘 MEDITATION & VISUALIZATION</div><div class="meditation-guide">Close your eyes, breathe deeply, and visualize a ${data.color.toLowerCase()} sphere of light spinning at your ${data.location}. Chant ${data.mantra}.</div>
-                    <div class="section-title">🕯️ SACRED RITUAL</div><div class="meditation-guide">${data.ritual}</div>
-                    <div class="mantra">${data.mantra}</div>
+                <div class="content">
+                    <div class="section"><div class="section-title">🌀 GOVERNS</div><p>${c.governs}</p></div>
+                    <div class="section"><div class="section-title">🌿 WHEN BALANCED</div><p>${c.balanced}</p></div>
+                    <div class="section"><div class="section-title">⚠️ WHEN BLOCKED</div><p>${c.blocked}</p></div>
+                    <div class="section"><div class="section-title">💎 CRYSTALS</div><div class="crystals-list">${c.crystals.map(cr => `<span class="crystal-tag">${cr}</span>`).join('')}</div></div>
+                    <div class="section"><div class="section-title">🌿 ESSENTIAL OILS</div><div class="oils-list">${c.oils.map(o => `<span class="oil-tag">${o}</span>`).join('')}</div></div>
+                    <div class="section"><div class="section-title">🧘 YOGA POSES</div><div class="yoga-list">${c.yoga.map(y => `<span class="yoga-pose">${y}</span>`).join('')}</div></div>
+                    <div class="affirmation-box" style="border-left-color: ${color};"><strong>✨ DAILY AFFIRMATION</strong><br>"${c.affirmation}"</div>
+                    <div class="section"><div class="section-title">🕯️ SACRED RITUAL</div><div class="ritual-box">${c.ritual}</div></div>
+                    <div class="section"><div class="section-title">🧘 MEDITATION</div><div class="meditation-box">${c.meditation}</div></div>
+                    <div class="mantra">${c.mantra}</div>
                 </div>
             </div>`;
             document.getElementById('chakraDetail').innerHTML = html;
@@ -822,7 +579,7 @@
         // Initialize
         window.onload = function() {
             generateStars();
-            renderCurrentQuestion();
+            renderQuiz();
             renderChakraDetail('root');
             updateOrbColor('root');
             
@@ -830,9 +587,7 @@
                 pill.addEventListener('click', function() {
                     document.querySelectorAll('.chakra-pill').forEach(p => p.classList.remove('active'));
                     this.classList.add('active');
-                    const chakraId = this.dataset.chakra;
-                    renderChakraDetail(chakraId);
-                    updateOrbColor(chakraId);
+                    selectChakra(this.dataset.chakra);
                 });
             });
         };
